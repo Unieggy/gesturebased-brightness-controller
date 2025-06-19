@@ -29,10 +29,7 @@ multi-user support, ambient-light fusion, Mac/Linux back-ends, more gestures (vo
 ```
 handtrack.py            → reusable HandDetector class (OpenCV + MediaPipe)
 brightnesscontrol.py    → main entry point; runs the webcam loop
-requirements.txt        → pinned dependency versions
-.gitignore              → keeps node_modules, __pycache__, .env, etc. out of Git
 README.md               → you are here
-docs/demo.gif           → optional demo animation
 ```
 
 ### handtrack.py
@@ -69,18 +66,26 @@ docs/demo.gif           → optional demo animation
 
 ## 🚀 Quick start
 
-```bash
-git clone https://github.com/<your-user>/gesture-brightness.git
-cd gesture-brightness
-python -m venv venv
-# Windows
-venv\Scripts\activate
-# macOS/Linux
-source venv/bin/activate
+Run inside PyCharm (recommended)
+Clone the repository
+File ▸ New ▸ Project from Version Control ▸ Git → paste
+https://github.com/Unieggy/gesturebased-brightness-controller.git
 
-pip install -r requirements.txt
-python brightnesscontrol.py
-```
+When PyCharm asks for an interpreter, choose New Virtual Environment
+(any Python 3.9 + executable works).
+
+PyCharm will spot missing packages. Click Install requirements or open
+Settings ▸ Python Interpreter and add:
+
+opencv-python
+mediapipe
+numpy
+screen_brightness_control
+
+Open brightnesscontrol.py, right-click → Run 'brightnesscontrol'.
+A webcam window appears. Pinch to dim/brighten, curl your pinky to lock.
+
+Stop the program with the red ■ button or by closing the video window.
 
 Hold your hand \~40 cm from the webcam:
 
